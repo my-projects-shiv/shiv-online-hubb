@@ -1,3 +1,4 @@
+/*
 package com.shivonlinehub.dbcomponent;
 
 import org.springframework.context.annotation.Bean;
@@ -44,3 +45,4 @@ public class DbConfig {
         return factoryBean;
     }
 }
+*/
