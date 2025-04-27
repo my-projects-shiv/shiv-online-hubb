@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shiv Online Hub - Cart</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Your Shopping Cart 🛒</h1>
+        <a href="index.html">🏠 Home</a>
+    </header>
+
+    <div id="cart-items">
+        <!-- Cart items will be loaded here dynamically -->
+    </div>
+
+    <div id="total-price">
+        <h2>Total: ₹<span id="total">0</span></h2>
+        <button onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <script>
+        // Load cart items
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = '';
+
+            let total = 0;
+
+            cart.forEach(item => {
+                total += item.price;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+
+                // Match product name to image
+                let imageName = '';
+                if (item.name.includes('iPhone')) {
+                    imageName = 'iphone15.jpg';
+                } else if (item.name.includes('Samsung')) {
+                    imageName = 'samsung-s23.jpg';
+                } else if (item.name.includes('Macbook')) {
+                    imageName = 'macbook-pro.jpg';
+                }
+
+                itemDiv.innerHTML = `
+                    <img src="./images/${imageName}" alt="${item.name}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <h3>${item.name}</h3>
+                        <p>Price: ₹${item.price}</p>
+                    </div>
+                `;
+
+                cartItemsDiv.appendChild(itemDiv);
+            });
+
+            document.getElementById('total').innerText = total;
+        }
+
+        function placeOrder() {
+            alert('Order placed successfully! 🎉');
+            localStorage.removeItem('cart');
+            window.location.href = 'index.html';
+        }
+
+        // Run on page load
+        loadCart();
+    </script>
+</body>
+</html>
+<button id="place-order-btn">Place Order</button>
