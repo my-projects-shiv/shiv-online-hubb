@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.5</version> <!-- You can use latest 3.x here -->
+        <version>3.1.5</version> <!-- You can use the latest 3.x here -->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -17,7 +17,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>17</java.version> <!-- Set the Java version to 17 -->
     </properties>
 
     <dependencies>
@@ -85,14 +85,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version> <!-- Use the latest available version -->
+                <version>3.11.0</version> <!-- Latest Maven Compiler Plugin version -->
                 <configuration>
                     <source>17</source> <!-- Set Java source version to 17 -->
                     <target>17</target> <!-- Set Java target version to 17 -->
                 </configuration>
             </plugin>
 
-            <!-- JaCoCo Plugin -->
+            <!-- JaCoCo Plugin for code coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
