@@ -51,7 +51,7 @@
         <!-- ✅ Correct MySQL Connector Java -->
         <dependency>
             <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId> 
+            <artifactId>mysql-connector-j</artifactId> 
             <version>8.0.32</version> 
         </dependency>
 
